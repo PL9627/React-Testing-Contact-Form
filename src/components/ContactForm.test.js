@@ -6,8 +6,9 @@ test('renders ContactForm without crashing', () => {
     render(<ContactForm />);
 });
 
-test('first name label will display', () => {
+test('labels will display', () => {
     const {getByLabelText} = render(<ContactForm />);
 
     const fnLabel = getByLabelText(/first name/i);
+    const lnLabel = getByLabelText(/last name/i);
 })

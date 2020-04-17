@@ -15,12 +15,21 @@ test('labels will display', () => {
     const mssgLabel = getByLabelText(/message/i);
 })
 
-test('fn input info will display', () => {
+test('input info will display', () => {
     const {getByLabelText, findByText} = render(<ContactForm />);
 
     const fnLabel = getByLabelText(/first name/i);
+    const lnLabel = getByLabelText(/last name/i);
+    const emailLabel = getByLabelText(/email/i);
+    const mssgLabel = getByLabelText(/message/i);
 
     fireEvent.change(fnLabel, {target: {name: 'firstName', value: 'Paul'}});
+    fireEvent.change(lnLabel , {target: {name: 'lastName', value: 'Lee'}});
+    fireEvent.change(emailLabel , {target: {name: 'email', value: 'Paul@gmail.com'}});
+    fireEvent.change(mssgLabel , {target: {name: 'message', value: 'hello'}});
 
     findByText('Paul');
+    findByText('Lee');
+    findByText('Paul@gmail.com');
+    findByText('hello');
 })

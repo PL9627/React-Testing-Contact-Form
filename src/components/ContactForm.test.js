@@ -11,4 +11,6 @@ test('labels will display', () => {
 
     const fnLabel = getByLabelText(/first name/i);
     const lnLabel = getByLabelText(/last name/i);
+    const emailLabel = getByLabelText(/email/i);
+    const mssgLabel = getByLabelText(/message/i);
 })

@@ -14,3 +14,9 @@ test('labels will display', () => {
     const emailLabel = getByLabelText(/email/i);
     const mssgLabel = getByLabelText(/message/i);
 })
+
+test('fn input info will display', () => {
+    const {getByTestId, findByText} = render(<ContactForm />);
+
+    
+})

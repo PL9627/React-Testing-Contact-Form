@@ -16,7 +16,11 @@ test('labels will display', () => {
 })
 
 test('fn input info will display', () => {
-    const {getByTestId, findByText} = render(<ContactForm />);
+    const {getByLabelText, findByText} = render(<ContactForm />);
 
-    
+    const fnLabel = getByLabelText(/first name/i);
+
+    fireEvent.change(fnLabel, {target: {name: 'firstName', value: 'Paul'}});
+
+    findByText('Paul');
 })
